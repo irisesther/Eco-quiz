@@ -2,6 +2,7 @@
   "expo": {
     "name": "Éco Quiz",
     "slug": "eco-quiz-mobile",
+    "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
