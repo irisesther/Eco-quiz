@@ -12,24 +12,28 @@
             height: 100vh;
             margin: 0;
             background-color: #f4f4f9;
+            font-family: sans-serif;
         }
         .container {
             text-align: center;
+            padding: 20px;
         }
         img {
-            max-width: 100%;
-            height: auto;
+            width: 250px; /* Taille réduite et fixe pour le QR Code */
+            height: 250px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        p {
+            margin-top: 15px;
+            color: #333;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="VOTRE_LIEN_NETLIFY_ICI" target="_blank">
-            <img src="frame.png" alt="QR Code">
-        </a>
-        <p>Scannez ou cliquez sur le QR Code pour accéder au quiz !</p>
+        <img src="frame.png" alt="QR Code">
+        <p>Scannez ce QR Code pour accéder au quiz !</p>
     </div>
 </body>
 </html>
