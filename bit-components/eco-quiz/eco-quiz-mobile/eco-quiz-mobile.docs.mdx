@@ -1,0 +1,75 @@
+---
+description: 'An example Expo / React Native app registered with Bit via react-native-app-type.'
+labels: ['app', 'react-native', 'expo', 'example']
+---
+
+A minimal Expo / React Native app component, runnable through Bit's
+[`react-native-app-type`](https://bit.cloud/bitdev/react-native/app-types/react-native-app-type).
+Use this as a starting point when you want a Bit-managed RN app — fork the
+files, edit `App.js`, register your own components, and you're off.
+
+What's in here:
+- `App.js` — the React Native root component (edit this to change what renders)
+- `index.ts` — Expo entry that calls `registerRootComponent(App)`
+- `app.json` — Expo app config (name, icons, splash, ios/android/web)
+- `babel.config.js` — `babel-preset-expo` setup
+- `eco-quiz-mobile.react-native-app.js` — the Bit app config that turns this folder into a runnable app
+- `assets/` — icons, splash, favicon
+- `FontFamily.jsx` — sample component used by `App.js`
+
+## Run
+
+```
+bit run eco-quiz-mobile
+```
+
+In a cloud workspace this goes straight to web. Locally with a TTY you'll
+get a platform picker (web / iOS / Android). To force a native target from a
+local terminal:
+
+```
+EXPO_RN_APP_PLATFORM=mobile-ios bit run eco-quiz-mobile
+EXPO_RN_APP_PLATFORM=mobile-android bit run eco-quiz-mobile
+```
+
+## App config (`eco-quiz-mobile.react-native-app.js`)
+
+```js
+export default {
+  name: 'eco-quiz-mobile',
+};
+```
+
+Optional fields (see
+[`ReactNativeAppOptions`](https://bit.cloud/bitdev/react-native/app-types/react-native-app-type)):
+
+- `entry` — explicit entry file(s); usually inferred from the folder
+- `portRange` — `[start, end]` range to pick a free port from (defaults to `[3000, 4000]`)
+
+## Use as a template
+
+To scaffold a new RN app component from this example:
+
+```
+bit create react-native-app my-app
+```
+
+The template is shipped by `bitdev.react-native/templates/generators` and
+generates the same file layout.
+
+## Hoisted node_modules
+
+This app — like every component using
+[`react-native-env`](https://bit.cloud/bitdev/react-native/react-native-env) —
+requires the workspace's `nodeLinker` to be `hoisted`:
+
+```json
+{
+  "teambit.dependencies/dependency-resolver": {
+    "nodeLinker": "hoisted"
+  }
+}
+```
+
+Without this, `bit run` warns at startup and Metro/Expo will likely surface
+mismatched dependency errors at runtime.
