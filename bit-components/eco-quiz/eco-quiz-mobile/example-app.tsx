@@ -380,4 +380,8 @@ const styles = StyleSheet.create({
   endStatLabel: { fontSize: 13, color: COLORS.muted, textAlign: 'center', marginTop: 6 },
   endBig: { fontSize: 26, fontWeight: '800', color: COLORS.greenDark, textAlign: 'center' },
   footer: { textAlign: 'center', fontSize: 12, color: COLORS.muted, lineHeight: 18, marginTop: 8 },
-});
+});<Image 
+  source={require('../../../../frame.png')} 
+  style={{ width: 220, height: 220, alignSelf: 'center', marginTop: 25, marginBottom: 25 }} 
+/>
+
