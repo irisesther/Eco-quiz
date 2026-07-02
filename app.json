@@ -1,0 +1,67 @@
+{
+  "expo": {
+    "name": "Éco Quiz",
+    "slug": "eco-quiz-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "ecoquiz",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#d3f5ea",
+    "primaryColor": "#1fae87",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#d3f5ea"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ecosasso.ecoquiz",
+      "buildNumber": "1",
+      "requireFullScreen": false,
+      "infoPlist": {
+        "NSUserTrackingUsageDescription": "Cette app utilise des publicités solidaires pour financer la protection des animaux et des océans. Aucun paiement n'est requis.",
+        "NSLocationWhenInUseUsageDescription": "Non utilisée.",
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-1405762716968051~1361919793"
+      }
+    },
+    "android": {
+      "package": "com.ecosasso.ecoquiz",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#d3f5ea"
+      },
+      "permissions": [],
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-1405762716968051~8641644017"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-1405762716968051~8641644017",
+          "iosAppId": "ca-app-pub-1405762716968051~1361919793",
+          "skAdNetworkItems": [
+            { "skAdNetworkIdentifier": "cstr6suwn9.skadnetwork" },
+            { "skAdNetworkIdentifier": "4fzdc2evr5.skadnetwork" },
+            { "skAdNetworkIdentifier": "2fnua5tdw4.skadnetwork" }
+          ]
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "23c85681-95f4-437d-9b49-2372f0ec2f69"
+      }
+    }
+  }
+}
